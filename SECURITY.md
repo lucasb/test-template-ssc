@@ -4,8 +4,7 @@
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you detect a vulnerability in this project, please report it privately to lucasb@github.com . DO NOT SUBMIT IT AS A PUBLIC ISSUE. 
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+This is a learning experiment done in my spare time, so I might take 120 days to disclose the vulnerability along with a fix.
+
