@@ -14,6 +14,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      # required for all workflows
+      security-events: write
+      # required to fetch internal or private CodeQL packs
+      packages: read
+
     strategy:
       fail-fast: false
       matrix:
