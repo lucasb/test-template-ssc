@@ -33,8 +33,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install flake8 pytest
+          pip-compile --generate-hashes --output-file=.github/workflows/requirements/runtime.txt pyproject.toml
+          pip-compile --config=pyproject.toml --generate-hashes .github/workflows/requirements/testing.in
+
+          pip install -r .github/workflows/requirements/testing.txt --require-hashes
+          pip install -r .github/workflows/requirements/runtime.txt --require-hashes
+
           pip install -e .
 
       - name: Lint with flake8
