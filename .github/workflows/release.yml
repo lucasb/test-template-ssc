@@ -33,7 +33,7 @@ jobs:
           python -m build
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4 #0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: dist
           path: ./dist/
@@ -58,7 +58,7 @@ jobs:
     # https://github.com/slsa-framework/slsa-github-generator#referencing-slsa-builders-and-generators
     # Monitor https://github.com/slsa-framework/slsa-verifier/issues/12 to know when it
     # can be hash-pinned
-    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.8.0
+    uses: slsa-framework/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@4.6.2
     with:
       provenance-name: provenance-cronk-$TAG.intoto.jsonl
       base64-subjects: "${{ needs.build.outputs.hashes }}"
